@@ -2,6 +2,7 @@
     <div id="app" style="text-align: center">
         <img src="../public/images/logo-144.png" alt="vue-hackernews.logo">
         <p style="line-height: 3;font-size: 30px">{{msg}}</p>
+        <router-view/>
     </div>
 </template>
 
