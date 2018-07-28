@@ -1,10 +1,13 @@
 import Vue from 'vue'
+import axios from 'axios'
 import App from './App.vue'
 import { createRouter } from './router'
 import titleMixin from './util/title'
 import * as filters from './util/filters'
 
 Vue.mixin(titleMixin)
+
+Vue.prototype.$fetch = axios
 
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])

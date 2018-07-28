@@ -14,6 +14,9 @@
         msg: 'hello Vue-HN',
       }
     },
+    beforeCreate () {
+
+    },
   }
 </script>
 

@@ -1,5 +1,5 @@
 function getTitle (vm) {
-  const { title } = vm.$options
+  const {title} = vm.$options
   if (title) {
     return typeof title === 'function'
       ? title.call(vm)
@@ -10,19 +10,15 @@ function getTitle (vm) {
 const serverTitleMixin = {
   created () {
     const title = getTitle(this)
-    if (title) {
-      this.$ssrContext.title = `Vue HN 2.0 | ${title}`
-    }
-  }
+    if (title) this.$ssrContext.title = title
+  },
 }
 
 const clientTitleMixin = {
   mounted () {
     const title = getTitle(this)
-    if (title) {
-      document.title = `Vue HN 2.0 | ${title}`
-    }
-  }
+    if (title) document.title = title
+  },
 }
 
 export default process.env.VUE_ENV === 'server'
