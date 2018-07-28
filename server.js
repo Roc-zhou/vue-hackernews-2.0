@@ -43,6 +43,7 @@ if (isProd) {
   // to automatically infer preload/prefetch links and directly add <script>
   // tags for any async chunks used during render, avoiding waterfall requests.
   const clientManifest = require('./dist/vue-ssr-client-manifest.json')
+  console.log(template)
   renderer = createRenderer(bundle, {
     template,
     clientManifest
